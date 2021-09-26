@@ -1,78 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{3A83CBED-E155-46C8-9CD8-F713AFB2B478}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <RootNamespace>MonoGame.ImGui</RootNamespace>
-        <AssemblyName>MonoGame.ImGui</AssemblyName>
-        <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-        <Deterministic>true</Deterministic>
-        <NuGetPackageImportStamp>
-        </NuGetPackageImportStamp>
-        <PackOnBuild>true</PackOnBuild>
-        <PackageVersion>1.0</PackageVersion>
-        <NeutralLanguage>en-US</NeutralLanguage>
-        <Summary>A Monogame wrapper for ImGui.NET</Summary>
-        <PackageTags>imgui, monogame, imgui.net</PackageTags>
-        <Title>Monogame.ImGui</Title>
-        <Authors>Dovydas Vaičiukynas, Amir Barak</Authors>
-        <PackageProjectUrl>https://github.com/dovker/Monogame.ImGui</PackageProjectUrl>
-        <Description>This is a Monogame wrapper for the ImGui.NET Library. Monogame.ImGui lets you build graphical interfaces for your Monogame games / in-game tools using a simple immediate-mode style.</Description>
-        <PackageId>Monogame.ImGui</PackageId>
-        <PackageLicenseUrl>https://github.com/dovker/Monogame.ImGui/blob/master/LICENSE</PackageLicenseUrl>
-        <LangVersion>9</LangVersion>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin/Debug</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>x86</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin/Release</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
-    <PropertyGroup>
-        <StartupObject />
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="System.Numerics" />
-        <Reference Include="mscorlib" />
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Data\IndexData.cs" />
-        <Compile Include="Data\InputData.cs" />
-        <Compile Include="Data\TextureData.cs" />
-        <Compile Include="Data\VertexData.cs" />
-        <Compile Include="DrawText.cs" />
-        <Compile Include="DrawVertDecleration.cs" />
-        <Compile Include="Exceptions\MissingLoadedTextureKeyException.cs" />
-        <Compile Include="Extensions\DataConvertExtensions.cs" />
-        <Compile Include="ImGUIRenderer.cs" />
-        <Compile Include="Utilities\GenerateRasterizerState.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="ImGui.NET" Version="1.72.0" />
-      <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.7.1.189" />
-      <PackageReference Include="System.Buffers" Version="4.5.0" />
-      <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
-      <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.6.0" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{3A83CBED-E155-46C8-9CD8-F713AFB2B478}</ProjectGuid>
+    <TargetFramework>net462</TargetFramework>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PackageVersion>1.0</PackageVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Summary>A Monogame wrapper for ImGui.NET</Summary>
+    <PackageTags>imgui, monogame, imgui.net</PackageTags>
+    <Title>Monogame.ImGui</Title>
+    <Authors>Dovydas Vaičiukynas, Amir Barak</Authors>
+    <PackageProjectUrl>https://github.com/Jump-King-Multiplayer/Monogame.ImGui</PackageProjectUrl>
+    <Description>This is a Monogame wrapper for the ImGui.NET Library. Monogame.ImGui lets you build graphical interfaces for your Monogame games / in-game tools using a simple immediate-mode style.</Description>
+    <PackageId>Monogame.ImGui</PackageId>
+    <PackageLicenseUrl>https://github.com/Jump-King-Multiplayer/Monogame.ImGui/blob/master/LICENSE</PackageLicenseUrl>
+    <LangVersion>9</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <OutputPath>bin/Debug</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin/Release</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ImGui.NET" Version="1.78.0" />
+    <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.0.1641" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />
+  </ItemGroup>
 </Project>
