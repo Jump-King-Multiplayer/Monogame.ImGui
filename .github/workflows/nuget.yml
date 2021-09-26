@@ -22,7 +22,7 @@ jobs:
       - name: Setup msbuild
         uses: microsoft/setup-msbuild@v1
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore Monogame.Imgui/MonoGame.ImGui.csproj
       - name: Build project
         run: dotnet build Monogame.ImGui/MonoGame.ImGui.csproj -c Release
       - name: Package project
