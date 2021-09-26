@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout files
@@ -26,4 +26,4 @@ jobs:
       - name: Package project
         run: dotnet pack MonoGame.ImGui/MonoGame.ImGui.csproj --no-build -c Release --include-source
       - name: Publish package
-        run: dotnet nuget push MonoGame.ImGui/bin/Release/*.symbols.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+        run: dotnet nuget push MonoGame.ImGui\bin\Release\*.symbols.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
