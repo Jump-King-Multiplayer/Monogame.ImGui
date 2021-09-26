@@ -1,0 +1,31 @@
+name: Publish NuGet package for x86
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+jobs:
+  publish:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v2
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+          source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build project
+        run: dotnet build Monogame.ImGui/MonoGame.ImGui.csproj -c Release
+      - name: Package project
+        run: dotnet pack Monogame.ImGui/MonoGame.ImGui.csproj --no-build -c Release --include-source
+      - name: Publish package
+        run: dotnet nuget push Facepunch.Steamworks/bin/Release/*.symbols.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
