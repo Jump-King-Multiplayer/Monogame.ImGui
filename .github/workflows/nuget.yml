@@ -28,4 +28,4 @@ jobs:
       - name: Package project
         run: dotnet pack Monogame.ImGui/MonoGame.ImGui.csproj --no-build -c Release --include-source
       - name: Publish package
-        run: dotnet nuget push Monogame.Imgui/bin/Release/*.symbols.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+        run: dotnet nuget push Monogame.Imgui/bin/Release/Monogame.ImGui.1.0.0.symbols.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
