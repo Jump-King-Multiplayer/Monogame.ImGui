@@ -2,6 +2,7 @@
   <PropertyGroup>
     <ProjectGuid>{3A83CBED-E155-46C8-9CD8-F713AFB2B478}</ProjectGuid>
     <TargetFramework>net462</TargetFramework>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageVersion>1.0</PackageVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
