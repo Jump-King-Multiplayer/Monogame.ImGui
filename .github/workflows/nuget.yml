@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout files
@@ -19,8 +19,6 @@ jobs:
           source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v1
       - name: Restore dependencies
         run: dotnet restore Monogame.Imgui/MonoGame.ImGui.csproj
       - name: Build project
@@ -28,4 +26,4 @@ jobs:
       - name: Package project
         run: dotnet pack Monogame.ImGui/MonoGame.ImGui.csproj --no-build -c Release --include-source
       - name: Publish package
-        run: dotnet nuget push Monogame.Imgui/bin/Release/Monogame.ImGui.1.0.0.symbols.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+        run: dotnet nuget push Monogame.Imgui/bin/Release/*.symbols.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
