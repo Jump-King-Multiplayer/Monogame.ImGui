@@ -13,6 +13,7 @@
     <Description>This is a Monogame wrapper for the ImGui.NET Library. Monogame.ImGui lets you build graphical interfaces for your Monogame games / in-game tools using a simple immediate-mode style.</Description>
     <PackageId>Monogame.ImGui</PackageId>
     <PackageLicense>https://github.com/Jump-King-Multiplayer/Monogame.ImGui/blob/master/LICENSE</PackageLicense>
+    <RepositoryUrl>https://github.com/Jump-King-Multiplayer/Monogame.ImGui</RepositoryUrl>
     <LangVersion>9</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
