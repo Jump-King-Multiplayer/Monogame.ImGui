@@ -4,7 +4,7 @@
     <TargetFramework>net462</TargetFramework>
     <RuntimeIdentifier>win-x86</RuntimeIdentifier>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.3</PackageVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Summary>A Monogame wrapper for ImGui.NET</Summary>
     <PackageTags>imgui, monogame, imgui.net</PackageTags>
